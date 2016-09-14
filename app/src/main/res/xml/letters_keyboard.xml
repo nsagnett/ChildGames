@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyHeight="16.5%p">
+    <Row
+        android:keyWidth="11%p"
+        android:verticalGap="0.5%p">
+        <Key
+            android:codes="0"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="A" />
+        <Key
+            android:codes="1"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="B" />
+        <Key
+            android:codes="2"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="C" />
+        <Key
+            android:codes="3"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="D" />
+        <Key
+            android:codes="4"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="E" />
+        <Key
+            android:codes="5"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="F" />
+        <Key
+            android:codes="6"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="G" />
+        <Key
+            android:codes="7"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="H" />
+        <Key
+            android:codes="8"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="I" />
+    </Row>
+    <Row
+        android:keyWidth="11%p"
+        android:verticalGap="0.5%p">
+        <Key
+            android:codes="9"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="J" />
+        <Key
+            android:codes="10"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="K" />
+        <Key
+            android:codes="11"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="L" />
+        <Key
+            android:codes="12"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="M" />
+        <Key
+            android:codes="13"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="N" />
+        <Key
+            android:codes="14"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="O" />
+        <Key
+            android:codes="15"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="P" />
+        <Key
+            android:codes="16"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="Q" />
+        <Key
+            android:codes="17"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="R" />
+    </Row>
+    <Row
+        android:keyWidth="11%p"
+        android:verticalGap="0.5%p">
+        <Key
+            android:codes="18"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="S" />
+        <Key
+            android:codes="19"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="T" />
+        <Key
+            android:codes="20"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="U" />
+        <Key
+            android:codes="21"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="V" />
+        <Key
+            android:codes="22"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="W" />
+        <Key
+            android:codes="23"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="X" />
+        <Key
+            android:codes="24"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="Y" />
+        <Key
+            android:codes="25"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="Z" />
+        <Key
+            android:codes="26"
+            android:horizontalGap="0.5%p"
+            android:keyLabel="-" />
+    </Row>
+</Keyboard>

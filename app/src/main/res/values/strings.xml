@@ -1,0 +1,22 @@
+<resources>
+    <string name="empty" />
+    <!--SPLASH SCREEN-->
+    <string name="app_name">Jeux d\'enfants</string>
+    <string name="dev_name">NSAPP</string>
+    <string name="smiley">:)</string>
+    <string name="touch_to_continue">Touchez l\'écran pour commencer</string>
+
+    <!-- GET NAME-->
+    <string name="what_is_name">Tout d\'abord, j\'ai besoin de connaitre ton prénom :</string>
+    <string name="your_name">Ecris ton prénom</string>
+    <string name="finish">J\'ai fini !</string>
+    <string name="get_name_confirm_message_fmt">Ton prénom est bien \"%s\" ?</string>
+    <string name="get_name_no_name_message">Tu n\'as pas renseigné ton prénom !</string>
+    <string name="get_name_yes_message">Oui !</string>
+    <string name="get_name_no_message">Je me suis trompé !</string>
+    <string name="get_name_neutral_message">J\'ai compris !</string>
+
+    <!-- RECEPTION-->
+    <string name="reception_message_fmt">Bienvenue %s ! Commence par choisir ton activité :</string>
+    <string name="differences_game">Jeu des différences</string>
+</resources>
