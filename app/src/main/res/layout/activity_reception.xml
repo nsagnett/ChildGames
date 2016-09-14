@@ -12,7 +12,7 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:textColor="@android:color/white"
-        android:textSize="30sp" />
+        android:textSize="@dimen/big_text" />
 
     <nsapp.childgames.view.MTextView
         android:id="@+id/erreursGameTV"
@@ -23,6 +23,6 @@
         android:padding="16dp"
         android:text="@string/differences_game"
         android:textColor="@color/white_text"
-        android:textSize="20sp" />
+        android:textSize="@dimen/normal_text" />
 
 </RelativeLayout>

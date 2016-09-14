@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.util.Pair;
 import android.view.MotionEvent;
 import android.view.View;
@@ -35,6 +36,9 @@ public class MSurfaceView extends View {
         paint.setColor(Color.RED);
         paint.setStrokeWidth(10);
         paint.setStyle(Paint.Style.STROKE);
+
+        DisplayMetrics metrics = getResources().getDisplayMetrics();
+        points.add(new Pair<Float, Float>(500.f * metrics.density, 500.f * metrics.density));
     }
 
     @Override
