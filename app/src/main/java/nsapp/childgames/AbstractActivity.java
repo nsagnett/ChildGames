@@ -3,16 +3,23 @@ package nsapp.childgames;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.Window;
+
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 import nsapp.childgames.view.MTextView;
 
 public abstract class AbstractActivity extends Activity implements View.OnClickListener {
 
     protected static final String USER_NAME_KEY = "UserNameKey";
-    protected static final String USER_CLASS_KEY = "UserClassKey";
+    protected static final String CHOSE_IMAGE_EXTRA_KEY = "ChoseImageExtraKey";
+
     protected static final int DELAY = 2000;
+    protected static JSONObject erreursGameConfig;
 
     protected Dialog dialog;
     protected MTextView messageDialogTV;

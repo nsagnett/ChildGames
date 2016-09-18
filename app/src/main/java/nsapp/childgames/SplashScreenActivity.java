@@ -9,6 +9,10 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import nsapp.childgames.utils.Resources;
 import nsapp.childgames.view.MTextView;
 
 public class SplashScreenActivity extends AbstractActivity implements View.OnClickListener {
@@ -49,6 +53,16 @@ public class SplashScreenActivity extends AbstractActivity implements View.OnCli
         });
 
         smileyTV.startAnimation(aa);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        try {
+            erreursGameConfig = new JSONObject(Resources.loadJSONFromAsset(this, "erreurs_conf.json"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

@@ -5,12 +5,18 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import nsapp.childgames.utils.OnTerminatedGameListener;
 import nsapp.childgames.view.MErrorsGameSurfaceView;
 
 public class ErrorsGameActivity extends AbstractActivity implements OnTerminatedGameListener {
 
-    private MErrorsGameSurfaceView errorsGameSurfaceView;
+    private MErrorsGameSurfaceView joueurMSV;
+    private View modeleV;
+    private View solutionV;
+    private JSONObject choseConf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +24,25 @@ public class ErrorsGameActivity extends AbstractActivity implements OnTerminated
         onPrepareDialog(this);
         setContentView(R.layout.activity_errors_game);
 
-        errorsGameSurfaceView = (MErrorsGameSurfaceView) findViewById(R.id.errorsGameMSV);
-        errorsGameSurfaceView.setOnTerminatedGameListener(this);
-        errorsGameSurfaceView.setErrorsCount(7);
+        joueurMSV = (MErrorsGameSurfaceView) findViewById(R.id.joueurMSV);
+        modeleV = findViewById(R.id.modeleV);
+        solutionV = findViewById(R.id.solutionV);
+        joueurMSV.setOnTerminatedGameListener(this);
+
+        try {
+            //String choseImage = getIntent().getStringExtra(CHOSE_IMAGE_EXTRA_KEY);
+            String choseImage = "singe";
+
+            choseConf = erreursGameConfig.getJSONObject(choseImage);
+
+            joueurMSV.setBackgroundResource(getResources().getIdentifier("erreurs_" + choseImage + "_joueur", "drawable", getPackageName()));
+            modeleV.setBackgroundResource(getResources().getIdentifier("erreurs_" + choseImage + "_modele", "drawable", getPackageName()));
+            solutionV.setBackgroundResource(getResources().getIdentifier("erreurs_" + choseImage + "_solution", "drawable", getPackageName()));
+            joueurMSV.setErrorsCount(choseConf.getInt("erreurs"));
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -29,10 +51,10 @@ public class ErrorsGameActivity extends AbstractActivity implements OnTerminated
         switch (view.getId()) {
             case R.id.yesDialogTV:
                 dialog.dismiss();
-                showAnswers(findViewById(R.id.referenceV), findViewById(R.id.solutionV));
+                showAnswers(modeleV, solutionV);
                 break;
             case R.id.noDialogTV:
-                errorsGameSurfaceView.removeLastPoint();
+                joueurMSV.removeLastPoint();
                 break;
         }
     }
