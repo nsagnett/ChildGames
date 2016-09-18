@@ -19,4 +19,7 @@
     <!-- RECEPTION-->
     <string name="reception_message_fmt">Bienvenue %s ! Commence par choisir ton activité :</string>
     <string name="differences_game">Jeu des différences</string>
+
+    <!-- ERRORS GAME-->
+    <string name="end_game">Tu as fini bravo ! Veux-tu voir les réponses ?</string>
 </resources>

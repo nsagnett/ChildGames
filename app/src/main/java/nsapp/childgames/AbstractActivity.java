@@ -58,6 +58,10 @@ public abstract class AbstractActivity extends Activity implements View.OnClickL
 
         neutralDialogTV = (MTextView) dialog.findViewById(R.id.neutralDialogTV);
         neutralDialogTV.setOnClickListener(clickListener);
+
+        noDialogTV.setText(getString(R.string.get_name_no_message));
+        yesDialogTV.setText(getString(R.string.get_name_yes_message));
+        neutralDialogTV.setText(getString(R.string.get_name_neutral_message));
     }
 
     protected void showConfirmDialog(String message) {

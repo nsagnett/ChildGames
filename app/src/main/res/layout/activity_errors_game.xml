@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gameLL"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <nsapp.childgames.view.MErrorsGameSurfaceView
+        android:id="@+id/errorsGameMSV"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:background="@drawable/erreurs_7_clown_touch" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5">
+
+        <View
+            android:id="@+id/referenceV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/erreurs_7_clown_ref" />
+
+        <View
+            android:id="@+id/solutionV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/erreurs_7_clown_sol"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>

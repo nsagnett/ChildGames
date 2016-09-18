@@ -24,7 +24,7 @@ public class ReceptionActivity extends AbstractActivity implements View.OnClickL
         super.onClick(view);
         switch (view.getId()) {
             case R.id.erreursGameTV:
-                startActivityWithAnim(GameSceneActivity.class, false);
+                startActivityWithAnim(ErrorsGameActivity.class, false);
                 break;
         }
     }

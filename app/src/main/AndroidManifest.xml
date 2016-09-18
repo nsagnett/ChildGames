@@ -27,7 +27,7 @@
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
         <activity
-            android:name="nsapp.childgames.GameSceneActivity"
+            android:name=".ErrorsGameActivity"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
     </application>

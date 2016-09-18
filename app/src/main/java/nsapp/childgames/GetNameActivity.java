@@ -20,6 +20,7 @@ public class GetNameActivity extends AbstractActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_name);
+        onPrepareDialog(this);
 
         nameTV = (MTextView) findViewById(R.id.nameTV);
         nameTV.setOnClickListener(this);
@@ -36,15 +37,6 @@ public class GetNameActivity extends AbstractActivity implements View.OnClickLis
             }
         });
 
-        onPrepareDialog(this);
-    }
-
-    @Override
-    protected void onPrepareDialog(View.OnClickListener clickListener) {
-        super.onPrepareDialog(clickListener);
-        noDialogTV.setText(getString(R.string.get_name_no_message));
-        yesDialogTV.setText(getString(R.string.get_name_yes_message));
-        neutralDialogTV.setText(getString(R.string.get_name_neutral_message));
     }
 
     @Override
