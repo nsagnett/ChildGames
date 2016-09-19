@@ -11,7 +11,7 @@
         <activity
             android:name="nsapp.childgames.SplashScreenActivity"
             android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+            android:theme="@style/ActivityTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,15 +21,15 @@
         <activity
             android:name="nsapp.childgames.GetNameActivity"
             android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
+            android:theme="@style/ActivityTheme" />
         <activity
             android:name="nsapp.childgames.ReceptionActivity"
             android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
+            android:theme="@style/ActivityTheme" />
         <activity
             android:name=".ErrorsGameActivity"
             android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
+            android:theme="@style/ActivityTheme" />
     </application>
 
 </manifest>
