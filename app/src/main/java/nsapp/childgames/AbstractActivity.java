@@ -18,9 +18,6 @@ public abstract class AbstractActivity extends Activity implements View.OnClickL
     protected static final String USER_NAME_KEY = "UserNameKey";
     protected static final String CHOSE_IMAGE_EXTRA_KEY = "ChoseImageExtraKey";
 
-    protected static final int DELAY = 2000;
-    protected static JSONObject erreursGameConfig;
-
     protected Dialog dialog;
     protected MTextView messageDialogTV;
     protected MTextView noDialogTV;

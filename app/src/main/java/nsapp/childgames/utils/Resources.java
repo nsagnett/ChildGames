@@ -2,9 +2,13 @@ package nsapp.childgames.utils;
 
 import android.content.Context;
 
+import org.json.JSONObject;
+
 import java.io.InputStream;
 
 public class Resources {
+
+    public static JSONObject configuration;
 
     public static String loadJSONFromAsset(Context context, String fileName) {
         String s;

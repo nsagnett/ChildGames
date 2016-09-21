@@ -9,6 +9,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import nsapp.childgames.utils.OnTerminatedGameListener;
+import nsapp.childgames.utils.Resources;
 import nsapp.childgames.view.MErrorsGameSurfaceView;
 
 public class ErrorsGameActivity extends AbstractActivity implements OnTerminatedGameListener {
@@ -33,7 +34,7 @@ public class ErrorsGameActivity extends AbstractActivity implements OnTerminated
             //String choseImage = getIntent().getStringExtra(CHOSE_IMAGE_EXTRA_KEY);
             String choseImage = "singe";
 
-            choseConf = erreursGameConfig.getJSONObject(choseImage);
+            choseConf = Resources.configuration.getJSONObject(choseImage);
 
             joueurMSV.setBackgroundResource(getResources().getIdentifier("erreurs_" + choseImage + "_joueur", "drawable", getPackageName()));
             modeleV.setBackgroundResource(getResources().getIdentifier("erreurs_" + choseImage + "_modele", "drawable", getPackageName()));

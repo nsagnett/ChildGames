@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/splashScreenRL"
+    android:id="@+id/homeRL"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="nsapp.childgames.SplashScreenActivity">
+    tools:context="nsapp.childgames.HomeActivity">
 
     <nsapp.childgames.view.MTextView
         android:id="@+id/touchScreenTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_centerInParent="true"
+        android:gravity="center"
         android:shadowColor="@android:color/black"
         android:shadowDx="5"
         android:shadowDy="5"
@@ -21,14 +21,4 @@
         android:textSize="40sp"
         android:visibility="gone" />
 
-    <nsapp.childgames.view.MTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:padding="10dp"
-        android:text="@string/dev_name"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/normal_text" />
 </RelativeLayout>

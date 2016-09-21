@@ -1,58 +1,55 @@
 package nsapp.childgames;
 
-import android.content.SharedPreferences;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.preference.PreferenceManager;
-import android.view.View;
-import android.view.animation.AnimationUtils;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.InputStream;
+
 import nsapp.childgames.utils.Resources;
-import nsapp.childgames.view.MTextView;
 
-public class SplashScreenActivity extends AbstractActivity implements View.OnClickListener {
-
+public class SplashScreenActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_screen);
+        setContentView(R.layout.activity_splash);
 
-        final MTextView touchScreenTV = ((MTextView) findViewById(R.id.touchScreenTV));
-
-        new Handler().postDelayed(new Runnable() {
+        new AsyncTask<Void, Void, Boolean>() {
             @Override
-            public void run() {
-                touchScreenTV.setVisibility(View.VISIBLE);
-                touchScreenTV.startAnimation(AnimationUtils.loadAnimation(SplashScreenActivity.this, R.anim.blink));
-                findViewById(R.id.splashScreenRL).setOnClickListener(SplashScreenActivity.this);
-            }
-        }, DELAY);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        try {
-            erreursGameConfig = new JSONObject(Resources.loadJSONFromAsset(this, "erreurs_conf.json"));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.splashScreenRL:
-                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-                if (prefs.getString(USER_NAME_KEY, null) == null) {
-                    startActivityWithAnim(GetNameActivity.class, true);
-                } else {
-                    startActivityWithAnim(ReceptionActivity.class, true);
+            protected Boolean doInBackground(Void... voids) {
+                try {
+                    InputStream is = getAssets().open("erreurs_conf.json");
+                    int size = is.available();
+                    byte[] buffer = new byte[size];
+                    if (is.read(buffer) != -1) {
+                        String s = new String(buffer, "UTF-8");
+                        Resources.configuration = new JSONObject(s);
+                    }
+                    is.close();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                    return false;
                 }
-                break;
-        }
+                return true;
+            }
+
+            @Override
+            protected void onPostExecute(Boolean success) {
+                super.onPostExecute(success);
+                if (success) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            startActivity(new Intent(SplashScreenActivity.this, HomeActivity.class));
+                            finish();
+                        }
+                    }, 4000);
+                }
+            }
+        }.execute();
     }
 }

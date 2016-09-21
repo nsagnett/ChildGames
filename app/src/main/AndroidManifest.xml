@@ -19,6 +19,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="nsapp.childgames.HomeActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" />
+        <activity
             android:name="nsapp.childgames.GetNameActivity"
             android:screenOrientation="landscape"
             android:theme="@style/ActivityTheme" />
