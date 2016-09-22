@@ -34,9 +34,9 @@ public class HomeActivity extends AbstractActivity implements View.OnClickListen
             case R.id.homeRL:
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
                 if (prefs.getString(USER_NAME_KEY, null) == null) {
-                    startActivityWithAnim(GetNameActivity.class, true);
+                    startActivityWithAnim(GetNameActivity.class, false);
                 } else {
-                    startActivityWithAnim(ReceptionActivity.class, true);
+                    startActivityWithAnim(ReceptionActivity.class, false);
                 }
                 break;
         }
