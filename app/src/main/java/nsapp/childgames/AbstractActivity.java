@@ -3,13 +3,8 @@ package nsapp.childgames;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.Window;
-
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 import nsapp.childgames.view.MTextView;
 

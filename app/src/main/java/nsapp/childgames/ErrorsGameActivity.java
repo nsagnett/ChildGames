@@ -29,6 +29,7 @@ public class ErrorsGameActivity extends AbstractActivity implements OnTerminated
         modeleV = findViewById(R.id.modeleV);
         solutionV = findViewById(R.id.solutionV);
         joueurMSV.setOnTerminatedGameListener(this);
+        findViewById(R.id.gumIV).setOnClickListener(this);
 
         try {
             //String choseImage = getIntent().getStringExtra(CHOSE_IMAGE_EXTRA_KEY);
@@ -56,6 +57,9 @@ public class ErrorsGameActivity extends AbstractActivity implements OnTerminated
                 break;
             case R.id.noDialogTV:
                 joueurMSV.removeLastPoint();
+                break;
+            case R.id.gumIV:
+                joueurMSV.removeSelectedPoint();
                 break;
         }
     }
