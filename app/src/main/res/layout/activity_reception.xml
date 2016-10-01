@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:background="@drawable/white_textview"
-        android:padding="16dp"
+        android:padding="@dimen/padding_tv"
         android:text="@string/differences_game"
         android:textColor="@color/white_text"
         android:textSize="@dimen/normal_text" />

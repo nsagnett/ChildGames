@@ -22,8 +22,8 @@ public class ErrorsGameActivity extends AbstractActivity implements OnTerminated
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        onPrepareDialog(this);
         setContentView(R.layout.activity_errors_game);
+        onPrepareDialog(this, false);
 
         joueurMSV = (MErrorsGameSurfaceView) findViewById(R.id.joueurMSV);
         modeleV = findViewById(R.id.modeleV);
@@ -66,7 +66,7 @@ public class ErrorsGameActivity extends AbstractActivity implements OnTerminated
 
     @Override
     public void onTerminatedGame() {
-        showConfirmDialog(getString(R.string.end_game));
+        showConfirmDialog(getString(R.string.end_game), getString(R.string.normal_dismiss_message), getString(R.string.normal_valid_message));
     }
 
     private void showAnswers(View out, View in) {

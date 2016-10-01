@@ -12,6 +12,7 @@ public class ReceptionActivity extends AbstractActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reception);
+        onPrepareDialog(this, true);
 
         String userName = PreferenceManager.getDefaultSharedPreferences(this).getString(USER_NAME_KEY, "");
         MTextView receptionTV = (MTextView) findViewById(R.id.receptionTV);
@@ -21,10 +22,10 @@ public class ReceptionActivity extends AbstractActivity implements View.OnClickL
 
     @Override
     public void onClick(View view) {
-        super.onClick(view);
         switch (view.getId()) {
             case R.id.erreursGameTV:
-                startActivityWithAnim(ErrorsGameActivity.class, false);
+                showNeutralDialog("prout", "OK OK");
+                //tartActivityWithAnim(ErrorsGameActivity.class, false);
                 break;
         }
     }

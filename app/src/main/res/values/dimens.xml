@@ -5,6 +5,8 @@
     <dimen name="border">3dp</dimen>
     <dimen name="border_radius">5dp</dimen>
 
+    <dimen name="padding_tv">14dp</dimen>
+
     <dimen name="smiley_margin">20dp</dimen>
 
     <dimen name="big_text">30sp</dimen>

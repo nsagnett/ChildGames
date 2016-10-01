@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-import nsapp.childgames.utils.Strings;
 import nsapp.childgames.view.MTextView;
 
 public class GetNameActivity extends AbstractActivity implements View.OnClickListener {
@@ -20,7 +19,7 @@ public class GetNameActivity extends AbstractActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_name);
-        onPrepareDialog(this);
+        onPrepareDialog(this, false);
 
         nameTV = (MTextView) findViewById(R.id.nameTV);
         nameTV.setOnClickListener(this);
@@ -32,7 +31,7 @@ public class GetNameActivity extends AbstractActivity implements View.OnClickLis
         gumIV.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                nameTV.setText("");
+                nameTV.setText(" ");
                 return true;
             }
         });
@@ -47,17 +46,19 @@ public class GetNameActivity extends AbstractActivity implements View.OnClickLis
                 showKeyboard();
                 break;
             case R.id.gumIV:
-                cleanName(nameTV);
+                removeLastCharName(nameTV);
                 break;
             case R.id.validTV:
-                if (TextUtils.isEmpty(nameTV.getText())) {
-                    showNeutralDialog(getString(R.string.get_name_no_name_message));
+                if (nameTV.getText().length() <= 1) {
+                    showNeutralDialog(getString(R.string.get_name_no_name_message), getString(R.string.normal_neutral_message));
                 } else {
-                    showConfirmDialog(getString(R.string.get_name_confirm_message_fmt, Strings.firstLetterUppercase(nameTV.getText().toString())));
+                    showConfirmDialog(getString(R.string.get_name_confirm_message_fmt, TextUtils.substring(nameTV.getText(), 0, nameTV.getText().length() - 1)),
+                            getString(R.string.normal_dismiss_message),
+                            getString(R.string.normal_valid_message));
                 }
                 break;
             case R.id.yesDialogTV:
-                PreferenceManager.getDefaultSharedPreferences(this).edit().putString(USER_NAME_KEY, Strings.firstLetterUppercase(nameTV.getText().toString())).apply();
+                PreferenceManager.getDefaultSharedPreferences(this).edit().putString(USER_NAME_KEY, TextUtils.substring(nameTV.getText(), 0, nameTV.getText().length() - 1)).apply();
                 dialog.dismiss();
                 startActivityWithAnim(ReceptionActivity.class, true);
                 break;
@@ -72,7 +73,12 @@ public class GetNameActivity extends AbstractActivity implements View.OnClickLis
         keyboardView.setOnKeyboardActionListener(new KeyboardView.OnKeyboardActionListener() {
             @Override
             public void onPress(int i) {
-                nameTV.setText(TextUtils.concat(nameTV.getText(), keyboardView.getKeyboard().getKeys().get(i).label));
+                if (nameTV.getText().length() <= 1) {
+                    nameTV.setText(TextUtils.concat(nameTV.getText(), keyboardView.getKeyboard().getKeys().get(i).label, " "));
+                } else {
+                    nameTV.setText(TextUtils.substring(nameTV.getText(), 0, nameTV.getText().length() - 1));
+                    nameTV.setText(TextUtils.concat(nameTV.getText(), keyboardView.getKeyboard().getKeys().get(i).label, " "));
+                }
             }
 
             @Override
@@ -115,10 +121,10 @@ public class GetNameActivity extends AbstractActivity implements View.OnClickLis
         nameTV.setHint(R.string.empty);
     }
 
-    private void cleanName(MTextView mTextView) {
+    private void removeLastCharName(MTextView mTextView) {
         CharSequence text = mTextView.getText();
-        if (!TextUtils.isEmpty(text)) {
-            mTextView.setText(text.subSequence(0, text.length() - 1));
+        if (text.length() > 1) {
+            mTextView.setText(TextUtils.concat(text.subSequence(0, text.length() - 2), " "));
         }
     }
 }

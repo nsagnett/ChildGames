@@ -1,24 +1,23 @@
 <resources>
     <string name="empty" />
     <!--SPLASH SCREEN-->
-    <string name="app_name">Jeux d\'enfants</string>
-    <string name="dev_name">NSAPP</string>
-    <string name="smiley">:)</string>
-    <string name="touch_to_continue">Touchez l\'écran pour commencer</string>
+    <string name="app_name">Jeux d\'enfants&#160;</string>
+    <string name="dev_name">NSAPP&#160;</string>
+    <string name="touch_to_continue">Touchez l\'écran pour commencer&#160;</string>
 
     <!-- GET NAME-->
-    <string name="what_is_name">Tout d\'abord, j\'ai besoin de connaitre ton prénom :</string>
-    <string name="your_name">Ecris ton prénom</string>
-    <string name="finish">J\'ai fini !</string>
-    <string name="get_name_confirm_message_fmt">Ton prénom est bien \"%s\" ?</string>
-    <string name="get_name_no_name_message">Tu n\'as pas renseigné ton prénom !</string>
-    <string name="get_name_yes_message">Oui !</string>
-    <string name="get_name_no_message">Je me suis trompé !</string>
-    <string name="get_name_neutral_message">J\'ai compris !</string>
+    <string name="what_is_name">Tout d\'abord, j\'ai besoin de connaitre ton prénom :&#160;</string>
+    <string name="your_name">Ecris ton prénom&#160;</string>
+    <string name="finish">J\'ai fini !&#160;</string>
+    <string name="get_name_confirm_message_fmt">Ton prénom est bien \"%s\" ?&#160;</string>
+    <string name="get_name_no_name_message">Tu n\'as pas renseigné ton prénom !&#160;</string>
+    <string name="normal_valid_message">Oui !&#160;</string>
+    <string name="normal_dismiss_message">Je me suis trompé !&#160;</string>
+    <string name="normal_neutral_message">J\'ai compris !&#160;</string>
 
     <!-- RECEPTION-->
-    <string name="reception_message_fmt">Bienvenue %s ! Commence par choisir ton activité :</string>
-    <string name="differences_game">Jeu des différences</string>
+    <string name="reception_message_fmt">Bienvenue %s ! Commence par choisir ton activité :&#160;</string>
+    <string name="differences_game">Jeu des différences&#160;</string>
 
     <!-- ERRORS GAME-->
     <string name="end_game">Tu as fini bravo ! Veux-tu voir les réponses ?</string>
